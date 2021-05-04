@@ -140,6 +140,7 @@ resource "aws_route_table_association" "a_public" {
 
 data "aws_vpc_endpoint_service" "s3" {
   service = "s3"
+  service_name = "com.amazonaws.${data.aws_region.current.name}.s3"
 }
 
 resource "aws_vpc_endpoint" "s3" {
